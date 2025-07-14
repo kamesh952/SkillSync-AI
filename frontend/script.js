@@ -481,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('resume', resumeFileInput.files[0]);
             formData.append('jobDescription', jobDescriptionTextarea.value);
 
-            const response = await fetch('http://localhost:3001/api/analyze', {
+            const response = await fetch('https://skillsync-ai-2-i3jw.onrender.com/', {
                 method: 'POST',
                 body: formData,
                 headers: {
