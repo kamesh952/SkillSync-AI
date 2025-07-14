@@ -124,7 +124,18 @@ function extractMatchScore(analysisText) {
   return match ? parseInt(match[1]) : null;
 }
 
-// Start server
+// Start server with enhanced message
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`
+  ╔═══════════════════════════════════════════════════╗
+  ║                                                   ║
+  ║   Resume Analyzer API is now running!             ║
+  ║                                                   ║
+  ║   Port: ${port.toString().padEnd(36)}║
+  ║   Ready to analyze resumes against job postings   ║
+  ║                                                   ║
+  ╚═══════════════════════════════════════════════════╝
+  `);
+  console.log(`Access the API at http://localhost:${port}/api/test`);
+  console.log(`Post resumes to http://localhost:${port}/api/analyze`);
 });
